@@ -2,6 +2,8 @@ import { TerminalInstance } from '../types'
 import { dispatchEvent, TerminalEvent } from '../helpers/events'
 
 const evalCommand = (cmd: string, instance: TerminalInstance) => {
+  dispatchEvent(TerminalEvent.ON_COMMAND_NOT_FOUND, instance.settings.host, cmd)
+  /*
   const { print } = instance
   const [command, ...args] = cmd.split(' ')
   const argMatches = args.join(' ').match(/('[^']+'|"[^"]+"|[^\s'"]+)/g)
@@ -24,8 +26,8 @@ const evalCommand = (cmd: string, instance: TerminalInstance) => {
     }
   } else {
     print(`<span class="terminal-error">command not found: ${command}</span>`)
-    dispatchEvent(TerminalEvent.ON_COMMAND_NOT_FOUND, instance.settings.host, cmd)
-  }
+
+  }*/
 }
 
 export default evalCommand

@@ -10,7 +10,7 @@ export const populateHistory = (instance: TerminalInstance) => {
     return
   }
   instance.history = [value, ...history]
-  instance.lastHistoryIndex = 0
+  instance.lastHistoryIndex = 0;
 }
 
 export const searchHistory = (instance: TerminalInstance, isDown?: boolean) => {

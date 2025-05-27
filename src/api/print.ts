@@ -11,6 +11,7 @@ const print = (
   settings: TerminalSettings
 ) => {
   const line = create('p', undefined, isCommand ? settings.prompt : content)
+
   if (isCommand) {
     const cmd = create('span', 'terminal-command', content)
     line.append(cmd)
